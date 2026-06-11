@@ -38,36 +38,53 @@ function StockDashboard() {
   const visible = filter === "All" ? products : products.filter((p) => p.status === filter);
 
   const aiSuggestions = [
-    ...expiringIn7.slice(0, 2).map((p) => ({
-      id: `exp-${p.id}`, icon: Clock, iconColor: "text-alert", iconBg: "bg-alert/10",
-      title: p.name,
-      reason: `Expires in ${p.expiryDays} days — ${p.stock} units at risk`,
-      action: `Apply ${Math.min(25, Math.ceil((7 - (p.expiryDays ?? 0)) * 4))}% discount to move stock quickly`,
-      recoverable: Math.round(p.mrp * p.stock * 0.75),
-      primary: "Apply Offer", secondary: "Dismiss", link: "/offers",
-    })),
-    ...slowMoving.slice(0, 2).map((p) => ({
-      id: `slow-${p.id}`, icon: TrendingDown, iconColor: "text-warning", iconBg: "bg-warning/10",
-      title: p.name,
-      reason: `${p.daysIdle} days without a sale — ₹${(p.mrp * p.stock).toLocaleString("en-IN")} blocked`,
-      action: "Bundle with a fast-mover at 8% off to clear stock",
-      recoverable: Math.round(p.mrp * p.stock * 0.6),
-      primary: "Build Bundle", secondary: "Dismiss", link: "/offers",
-    })),
-    ...donationEligible.slice(0, 1).map((p) => ({
-      id: `don-${p.id}`, icon: Heart, iconColor: "text-success", iconBg: "bg-success/10",
-      title: p.name,
-      reason: `${p.stock} units expire in ${p.expiryDays} days — donate before waste`,
-      action: `Donating saves ≈${((p.weightKg ?? 0.5) * p.stock * 2.5).toFixed(1)} kg CO₂ & feeds families`,
-      recoverable: 0, primary: "Donate", secondary: "Dismiss", link: "/ngo",
-    })),
-    {
-      id: "promo-weekend", icon: Zap, iconColor: "text-primary", iconBg: "bg-accent",
-      title: "Weekend Promotion",
-      reason: "Saturday tomorrow — Rice & Oil sell 40% more on weekends",
-      action: "Running a promotion today could recover ₹1,250+ in revenue",
-      recoverable: 1250, primary: "Create Offer", link: "/offers",
-    },
+  {id: "exp-bread", icon: Clock, iconColor: "text-alert", iconBg: "bg-alert/10",
+    title: "Britannia Whole Wheat Bread",
+    reason: "Expires in 3 days — 14 packs at risk",
+    action: "Apply 15% discount to avoid spoilage and recover revenue",
+    recoverable: 840,
+    primary: "Create Offer", secondary: "Dismiss", link: "/offers",
+  },
+
+  { id: "slow-cornflakes", icon: TrendingDown, iconColor: "text-warning", iconBg: "bg-warning/10",
+    title: "Kellogg's Corn Flakes",
+    reason: "9 days without a sale — ₹2,250 inventory blocked",
+    action: "Bundle with milk packs to improve movement",
+    recoverable: 1350,
+    primary: "Build Bundle", secondary: "Dismiss", link: "/offers",
+  },
+
+  { id: "reorder-milk", icon: Package, iconColor: "text-primary", iconBg: "bg-primary/10",
+    title: "Aavin Full Cream Milk",
+    reason: "Current stock likely to run out in 2 days",
+    action: "Reorder 48 packets to prevent stockout during peak demand",
+    recoverable: 3200,
+    primary: "Create PO", secondary: "Dismiss", link: "/inventory",
+  },
+
+  { id: "crosssell-biscuits", icon: ShoppingCart, iconColor: "text-success", iconBg: "bg-success/10",
+    title: "Good Day Biscuits",
+    reason: "72% of customers buying tea also buy biscuits",
+    action: "Create a Tea + Biscuit combo to increase basket value",
+    recoverable: 1850,
+    primary: "Create Combo", secondary: "Dismiss", link: "/offers",
+  },
+
+  { id: "forecast-rice", icon: TrendingUp, iconColor: "text-info", iconBg: "bg-info/10",
+    title: "India Gate Basmati Rice",
+    reason: "Sales expected to increase by 32% next week",
+    action: "Increase stock before demand spike to avoid missed sales",
+    recoverable: 4800,
+    primary: "View Forecast", secondary: "Dismiss", link: "/analytics",
+  },
+
+  {
+    id: "promo-weekend", icon: Zap, iconColor: "text-primary", iconBg: "bg-accent", 
+    title: "Weekend Promotion", reason: "Saturday tomorrow — Soft Drinks sell 38% more on weekends",
+    action: "Launch a weekend combo offer to recover ₹1,500+ revenue",
+    recoverable: 1500,
+    primary: "Create Offer", secondary: "Dismiss", link: "/offers",
+  },
   ].filter((s) => !dismissed.has(s.id));
 
   return (
@@ -75,31 +92,6 @@ function StockDashboard() {
       <div>
         <h1 className="text-2xl font-bold text-foreground">Stock Dashboard</h1>
         <p className="text-sm text-muted-foreground mt-1">Live inventory across {counts.total} SKUs</p>
-      </div>
-
-      {/* Streak banner */}
-      <div className="rounded-xl shadow-card p-5 flex items-center gap-4 text-white relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0D4F2E 0%, #1A7A45 60%, #F6C90E 140%)" }}>
-        <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center shrink-0">
-          <Flame className="w-7 h-7" style={{ color: "#F6C90E" }} />
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-bold text-lg">🔥 7-Day Offer Streak!</span>
-            <span className="text-[10px] uppercase tracking-wide bg-white/20 px-2 py-0.5 rounded-full font-semibold">On fire</span>
-          </div>
-          <div className="text-sm text-white/90 mt-1">
-            You've sent offers 7 days in a row. Keep it up to unlock <b>"Consistent Merchant"</b> badge <Award className="inline w-4 h-4 -mt-0.5" style={{ color: "#F6C90E" }} />
-          </div>
-          <div className="mt-3 flex gap-1.5">
-            {Array.from({ length: 7 }).map((_, i) => (
-              <div key={i} className="flex-1 h-1.5 rounded-full" style={{ background: "#F6C90E" }} />
-            ))}
-            {Array.from({ length: 3 }).map((_, i) => (
-              <div key={`e${i}`} className="flex-1 h-1.5 rounded-full bg-white/20" />
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* Summary cards */}
