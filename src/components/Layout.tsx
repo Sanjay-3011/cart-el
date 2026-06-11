@@ -5,12 +5,9 @@ import type { ComponentType } from "react";
 
 const nav: { to: string; label: string; icon: ComponentType<{ className?: string }> }[] = [
   { to: "/",              label: "Stock",         icon: BarChart2 },
-  { to: "/orders",        label: "Online Orders", icon: ShoppingCart },
   { to: "/offers",        label: "AI Offers",     icon: Sparkles },
   { to: "/broadcast",     label: "Broadcast",     icon: MessageCircle },
   { to: "/analytics",     label: "Analytics",     icon: TrendingUp },
-  { to: "/ngo",           label: "Donate",        icon: Heart },
-  { to: "/sustainability", label: "Green Impact",  icon: Leaf },
 ];
 
 export function Layout() {
