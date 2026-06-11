@@ -163,29 +163,18 @@ function Broadcast() {
               <span className="text-muted-foreground">{selected.size} of {customers.length} selected</span>
             </div>
             <div className="divide-y divide-border">
-              <div className="hidden md:grid grid-cols-[auto_2fr_1.5fr_1fr_1fr_1fr] gap-3 px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wide bg-background/30">
-                <div className="w-4" /><div>Name</div><div>Phone</div><div>Type</div><div>Last Purchase</div><div>Outstanding</div>
+              <div className="hidden md:grid grid-cols-[auto_2fr_1.5fr_1fr] gap-3 px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wide bg-background/30">
+                <div className="w-4" /><div>Name</div><div>Phone</div><div>Last Purchase</div>
               </div>
               {visible.map((c) => (
-                <label key={c.id} className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_2fr_1.5fr_1fr_1fr_1fr] gap-3 px-4 py-3 hover:bg-muted/40 cursor-pointer items-center">
+                <label key={c.id} className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_2fr_1.5fr_1fr] gap-3 px-4 py-3 hover:bg-muted/40 cursor-pointer items-center">
                   <input type="checkbox" checked={selected.has(c.id)} onChange={() => toggle(c.id)} className="w-4 h-4 accent-primary" />
                   <div>
                     <div className="text-sm font-medium text-foreground">{c.name}</div>
-                    <div className="md:hidden text-xs text-muted-foreground">{c.phone} · {c.type}</div>
+                    <div className="md:hidden text-xs text-muted-foreground">{c.phone}</div>
                   </div>
                   <div className="hidden md:block text-sm text-muted-foreground">{c.phone}</div>
-                  <div className="hidden md:block">
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                      c.type === "Credit" ? "bg-warning/10 text-warning" : 
-                      c.type === "Business" ? "bg-indigo-500/10 text-indigo-500" :
-                      c.type === "Frequent" ? "bg-primary/10 text-primary" :
-                      "bg-success/10 text-success"
-                    }`}>{c.type}</span>
-                  </div>
                   <div className="hidden md:block text-sm text-muted-foreground">{c.lastPurchase}</div>
-                  <div className="hidden md:block text-sm font-medium text-foreground">
-                    {c.outstanding > 0 ? `₹${c.outstanding.toLocaleString("en-IN")}` : "—"}
-                  </div>
                 </label>
               ))}
             </div>
