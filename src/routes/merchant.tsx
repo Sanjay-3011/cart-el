@@ -5,7 +5,7 @@ import {
   ShoppingBag, Coffee, Pill, Wrench, Scissors, MoreHorizontal
 } from "lucide-react";
 
-export const Route = createFileRoute("/onboarding/merchant")({
+export const Route = createFileRoute("/merchant")({
   component: MerchantOnboarding,
 });
 

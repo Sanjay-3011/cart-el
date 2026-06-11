@@ -5,7 +5,7 @@ import {
   CheckCircle2, Loader2, AlertCircle, ShieldCheck, Info
 } from "lucide-react";
 
-export const Route = createFileRoute("/onboarding/database")({
+export const Route = createFileRoute("/database")({
   component: DatabaseOnboarding,
 });
 
