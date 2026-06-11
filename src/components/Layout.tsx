@@ -104,7 +104,7 @@ export function Layout() {
     }
   }, [voiceOpen]);
 
-  if (pathname === "/login") {
+  if (pathname === "/login" || pathname.startsWith("/onboarding") || pathname === "/database") {
     return <Outlet />;
   }
 
