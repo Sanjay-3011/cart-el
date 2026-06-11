@@ -14,9 +14,7 @@ type PosterVariant = "premium" | "festive" | "modern" | "discount" | "custom";
 const variants: { id: PosterVariant; label: string; emoji: string; desc: string }[] = [
   { id: "premium",  label: "Version A – Premium",         emoji: "✨", desc: "Dark green gradient, professional" },
   { id: "festive",  label: "Version B – Festive",         emoji: "🪔", desc: "Warm golden, celebration theme" },
-  { id: "modern",   label: "Version C – Modern Social",   emoji: "📱", desc: "Clean white minimal, social-ready" },
-  { id: "discount", label: "Version D – Discount Heavy",  emoji: "🔥", desc: "Bold red, maximum attention" },
-  { id: "custom",   label: "Version E – AI Magic",        emoji: "🤖", desc: "Custom prompt-driven design" },
+  { id: "custom",   label: "Version E – Custom",        emoji: "🤖", desc: "Custom prompt-driven design" },
 ];
 
 function tierFor(savings: number) {
@@ -201,24 +199,6 @@ function OfferBuilder() {
             <textarea readOnly value={lang === "en" ? captionEn : captionTa}
               className="w-full h-28 text-sm border border-border rounded-lg p-3 bg-background resize-none" />
           </div>
-
-          <div className="bg-card rounded-xl shadow-card p-5 space-y-3">
-            <div className="flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-primary" />
-              <h2 className="font-semibold text-foreground">Customer Savings Potential</h2>
-            </div>
-            <div className="h-3 bg-muted rounded-full overflow-hidden">
-              <div className="h-full transition-all duration-500" style={{ width: `${meterPct}%`, background: `linear-gradient(90deg, #1A7A45, ${GOLD})` }} />
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <div>
-                <div className="font-bold text-foreground">₹{totalCustomerSavings.toLocaleString("en-IN")} saved</div>
-                <div className="text-xs text-muted-foreground">across 156 customers</div>
-              </div>
-              <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/10 text-primary flex items-center gap-1">
-                {tier.emoji} {tier.name}
-              </span>
-            </div>
           </div>
         </div>
 
