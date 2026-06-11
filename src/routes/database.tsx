@@ -289,10 +289,6 @@ function DatabaseOnboarding() {
             Launch My Dashboard
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
-
-          <p className="text-center text-xs text-muted-foreground">
-            You can update these settings anytime from the dashboard.
-          </p>
         </form>
       </div>
     </div>
