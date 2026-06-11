@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useMemo, useRef, useState } from "react";
-import { products, offerStore, categories, imgFor, type Product } from "@/data/mock";
+import { products, offerStore, categories, type Product } from "@/data/mock";
 import { Search, Sparkles, Download, ArrowRight, Trophy, Eye } from "lucide-react";
 import { toPng } from "html-to-image";
 
@@ -372,11 +372,6 @@ function PosterRenderer({
           const save = p.mrp - np;
           return (
             <div key={p.id} style={{ background: c.cardBg, borderRadius: 24, padding: hero ? 40 : 20, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", border: `1px solid ${variant === "modern" ? "rgba(0,0,0,0.08)" : "rgba(255,255,255,0.15)"}`, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}>
-              <div style={{ width: hero ? 300 : 150, height: hero ? 300 : 150, borderRadius: 20, overflow: "hidden", background: "white", marginBottom: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.25)" }}>
-                <img src={imgFor(p)} alt={p.name} crossOrigin="anonymous" referrerPolicy="no-referrer"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><rect width='160' height='160' fill='%23F6C90E'/><text x='50%' y='55%' font-size='72' text-anchor='middle'>🛒</text></svg>`)}`; }}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </div>
               <div style={{ fontSize: hero ? 36 : 20, fontWeight: 700, color: c.headerColor, lineHeight: 1.2, marginBottom: 10 }}>{p.name}</div>
               <div style={{ display: "flex", alignItems: "baseline", gap: 8, justifyContent: "center", marginBottom: 8 }}>
                 <span style={{ fontSize: hero ? 22 : 14, opacity: 0.55, textDecoration: "line-through", color: c.headerColor }}>₹{p.mrp}</span>
