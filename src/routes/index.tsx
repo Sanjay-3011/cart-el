@@ -147,33 +147,6 @@ function StockDashboard() {
             ))}
           </div>
         </div>
-
-        <div className="bg-card rounded-xl shadow-card p-5 border-t-4 border-t-success">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-success/10 flex items-center justify-center">
-              <Heart className="w-4 h-4 text-success" />
-            </div>
-            <span className="font-semibold text-sm">Donation Eligible</span>
-          </div>
-          <div className="space-y-2">
-            <div className="flex justify-between text-xs"><span className="text-muted-foreground">Eligible products</span><span className="font-bold text-success">{donationEligible.length} items</span></div>
-            <div className="flex justify-between text-xs">
-              <span className="text-muted-foreground">CO₂ you can save</span>
-              <span className="font-bold flex items-center gap-1"><Leaf className="w-3 h-3 text-success" />{donationEligible.reduce((s, p) => s + (p.weightKg ?? 0.5) * p.stock * 2.5, 0).toFixed(1)} kg</span>
-            </div>
-            <div className="h-px bg-border my-1" />
-            {donationEligible.slice(0, 2).map((p) => (
-              <div key={p.id} className="flex items-center gap-2 text-xs">
-                <span className="w-2 h-2 rounded-full bg-success shrink-0" />
-                <span className="flex-1 truncate text-foreground">{p.name}</span>
-                <span className="text-success font-medium">{p.stock} units</span>
-              </div>
-            ))}
-            <Link to="/ngo" className="flex items-center justify-center gap-1 w-full bg-success/10 hover:bg-success/20 text-success text-xs font-semibold rounded-lg py-2 transition-colors mt-1">
-              Donate Now <ChevronRight className="w-3 h-3" />
-            </Link>
-          </div>
-        </div>
       </div>
 
       {/* Filter pills */}
