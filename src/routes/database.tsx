@@ -13,7 +13,7 @@ const DB_TYPES = [
   { label: "MySQL", logo: "🐬" },
   { label: "SQL Server", logo: "🪟" },
   { label: "PostgreSQL", logo: "🐘" },
-  { label: "GoFrugal API", logo: "🛒" },
+  { label: "MongoDB", logo: "🍃" },
 ];
 
 const STEPS = ["Business Info", "Connect Database"];
@@ -110,7 +110,7 @@ function DatabaseOnboarding() {
         <div className="flex items-start gap-2.5 bg-primary/5 border border-primary/20 rounded-xl px-4 py-3 mb-6">
           <ShieldCheck className="w-4 h-4 text-primary mt-0.5 shrink-0" />
           <p className="text-xs text-muted-foreground leading-relaxed">
-            CART-EL connects with <strong className="text-foreground">read-only</strong> access. We never modify, delete, or write to your database. Your billing system is completely unaffected.
+            CART-EL recommends connecting through a dedicated read-only database user for dashboard access. This ensures the platform can securely analyze and visualize your business data without modifying, deleting, or affecting your billing and operational systems.
           </p>
         </div>
 
@@ -211,7 +211,7 @@ function DatabaseOnboarding() {
                       value={form.username}
                       onChange={e => update("username", e.target.value)}
                       className="w-full pl-9 pr-4 py-2.5 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                      placeholder="poster_readonly"
+                      placeholder="admin_readonly"
                       required
                     />
                   </div>
@@ -242,7 +242,7 @@ function DatabaseOnboarding() {
                     value={form.database}
                     onChange={e => update("database", e.target.value)}
                     className="w-full pl-9 pr-4 py-2.5 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="e.g. Medishopdb"
+                    placeholder="e.g. GroceryDB"
                     required
                   />
                 </div>

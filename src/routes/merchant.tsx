@@ -110,7 +110,7 @@ function MerchantOnboarding() {
                   value={form.shopName}
                   onChange={e => update("shopName", e.target.value)}
                   className="w-full pl-9 pr-4 py-2.5 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                  placeholder="e.g. Aadhirai Mart"
+                  placeholder="e.g. Saravana Stores"
                   required
                 />
               </div>
@@ -158,7 +158,7 @@ function MerchantOnboarding() {
                   value={form.city}
                   onChange={e => update("city", e.target.value)}
                   className="w-full pl-9 pr-4 py-2.5 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                  placeholder="e.g. Perambalur"
+                  placeholder="e.g. Chennai"
                   required
                 />
               </div>
