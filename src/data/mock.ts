@@ -29,24 +29,55 @@ export const categories = [
 ];
 
 export const products: Product[] = [
-  { id: "p1",  name: "Sona Masoori Rice",   category: "Rice & Grains",        unit: "Kg",     mrp: 58,  stock: 250, status: "Healthy",    img: "rice,bag",           weightKg: 1 },
-  { id: "p2",  name: "Ponni Rice",           category: "Rice & Grains",        unit: "Kg",     mrp: 62,  stock: 180, status: "Healthy",    img: "rice,grain",         weightKg: 1 },
-  { id: "p3",  name: "Sunflower Oil",        category: "Cooking Oil",          unit: "Litre",  mrp: 148, stock: 12,  status: "Low Stock",  aiPick: true, img: "sunflower,oil,bottle", daysIdle: 3, expiryDays: 28, weightKg: 1 },
-  { id: "p4",  name: "Groundnut Oil",        category: "Cooking Oil",          unit: "Litre",  mrp: 210, stock: 8,   status: "Critical",   aiPick: true, img: "peanut,oil",           daysIdle: 7, expiryDays: 6,  weightKg: 1 },
-  { id: "p5",  name: "Toor Dal",             category: "Dal & Pulses",         unit: "Kg",     mrp: 140, stock: 75,  status: "Healthy",    img: "lentils,dal",        weightKg: 1 },
-  { id: "p6",  name: "Urad Dal",             category: "Dal & Pulses",         unit: "Kg",     mrp: 125, stock: 6,   status: "Critical",   aiPick: true, img: "urad,lentils",         daysIdle: 5, expiryDays: 4,  weightKg: 1 },
-  { id: "p7",  name: "Turmeric Powder",      category: "Spices & Masala",      unit: "Packet", mrp: 65,  stock: 120, status: "Healthy",    img: "turmeric,powder",    weightKg: 0.1 },
-  { id: "p8",  name: "Red Chilli Powder",    category: "Spices & Masala",      unit: "Packet", mrp: 75,  stock: 4,   status: "Critical",   aiPick: true, img: "chilli,powder",        daysIdle: 9, expiryDays: 5,  weightKg: 0.1 },
-  { id: "p9",  name: "Wheat Flour (Atta)",   category: "Flour & Rava",         unit: "Kg",     mrp: 45,  stock: 150, status: "Healthy",    img: "flour,wheat",        weightKg: 1 },
-  { id: "p10", name: "Sugar",                category: "Sugar & Salt",         unit: "Kg",     mrp: 44,  stock: 200, status: "Healthy",    img: "sugar,white",        weightKg: 1 },
-  { id: "p11", name: "Parle-G Biscuit",      category: "Biscuits & Snacks",    unit: "Pcs",    mrp: 10,  stock: 300, status: "Healthy",    img: "biscuit,cookie",     weightKg: 0.08, expiryDays: 22 },
-  { id: "p12", name: "Tata Tea Premium",     category: "Beverages",            unit: "Packet", mrp: 145, stock: 9,   status: "Low Stock",  aiPick: true, img: "tea,packet",           daysIdle: 4, expiryDays: 180, weightKg: 0.25 },
-  { id: "p13", name: "Surf Excel",           category: "Soaps & Detergents",   unit: "Packet", mrp: 95,  stock: 50,  status: "Healthy",    img: "detergent,powder",   weightKg: 0.5 },
-  { id: "p14", name: "Aavin Milk Packet",    category: "Dairy & Eggs",         unit: "Litre",  mrp: 27,  stock: 120, status: "Healthy",    img: "milk,packet",        weightKg: 1,   expiryDays: 2 },
-  { id: "p15", name: "Garam Masala",         category: "Spices & Masala",      unit: "Packet", mrp: 85,  stock: 3,   status: "Dead Stock", aiPick: true, img: "garam,masala,spice",   daysIdle: 14, expiryDays: 8, weightKg: 0.1 },
-  { id: "p16", name: "Coconut Oil",          category: "Cooking Oil",          unit: "Litre",  mrp: 225, stock: 30,  status: "Healthy",    img: "coconut,oil",        weightKg: 1 },
-  { id: "p17", name: "Bru Coffee",           category: "Beverages",            unit: "Packet", mrp: 130, stock: 60,  status: "Healthy",    img: "coffee,jar",         weightKg: 0.2 },
-  { id: "p18", name: "Eggs (Tray)",          category: "Dairy & Eggs",         unit: "Pcs",    mrp: 7,   stock: 500, status: "Healthy",    img: "eggs,tray",          weightKg: 0.06, expiryDays: 10 },
+  { id: "p1", name: "Sona Masoori Rice", category: "Rice & Grains", unit: "Kg", mrp: 65, stock: 250, status: "Healthy", img: "rice", weightKg: 1 },
+  { id: "p2", name: "Ponni Rice", category: "Rice & Grains", unit: "Kg", mrp: 62, stock: 180, status: "Healthy", img: "rice", weightKg: 1 },
+  { id: "p3", name: "Idli Rice", category: "Rice & Grains", unit: "Kg", mrp: 55, stock: 25, status: "Low Stock", aiPick: true, img: "rice", daysIdle: 4, expiryDays: 40, weightKg: 1 },
+  { id: "p4", name: "Boiled Rice", category: "Rice & Grains", unit: "Kg", mrp: 50, stock: 8, status: "Critical", aiPick: true, img: "rice", daysIdle: 7, expiryDays: 20, weightKg: 1 },
+
+  { id: "p5", name: "Sunflower Oil", category: "Cooking Oil", unit: "Litre", mrp: 148, stock: 40, status: "Healthy", img: "oil", weightKg: 1 },
+  { id: "p6", name: "Groundnut Oil", category: "Cooking Oil", unit: "Litre", mrp: 210, stock: 12, status: "Low Stock", img: "oil", weightKg: 1 },
+  { id: "p7", name: "Palm Oil", category: "Cooking Oil", unit: "Litre", mrp: 120, stock: 18, status: "Healthy", img: "oil", weightKg: 1 },
+  { id: "p8", name: "Coconut Oil", category: "Cooking Oil", unit: "Litre", mrp: 225, stock: 35, status: "Healthy", img: "oil", weightKg: 1 },
+
+  { id: "p9", name: "Toor Dal", category: "Dal & Pulses", unit: "Kg", mrp: 140, stock: 75, status: "Healthy", img: "dal", weightKg: 1 },
+  { id: "p10", name: "Urad Dal", category: "Dal & Pulses", unit: "Kg", mrp: 125, stock: 5, status: "Critical", aiPick: true, img: "dal", daysIdle: 5, expiryDays: 10, weightKg: 1 },
+  { id: "p11", name: "Moong Dal", category: "Dal & Pulses", unit: "Kg", mrp: 115, stock: 50, status: "Healthy", img: "dal", weightKg: 1 },
+  { id: "p12", name: "Chana Dal", category: "Dal & Pulses", unit: "Kg", mrp: 100, stock: 65, status: "Healthy", img: "dal", weightKg: 1 },
+
+  { id: "p13", name: "Turmeric Powder", category: "Spices & Masala", unit: "Packet", mrp: 65, stock: 100, status: "Healthy", img: "spice", weightKg: 0.1 },
+  { id: "p14", name: "Red Chilli Powder", category: "Spices & Masala", unit: "Packet", mrp: 75, stock: 4, status: "Critical", aiPick: true, img: "spice", daysIdle: 9, expiryDays: 8, weightKg: 0.1 },
+  { id: "p15", name: "Coriander Powder", category: "Spices & Masala", unit: "Packet", mrp: 70, stock: 30, status: "Healthy", img: "spice", weightKg: 0.1 },
+  { id: "p16", name: "Garam Masala", category: "Spices & Masala", unit: "Packet", mrp: 85, stock: 2, status: "Dead Stock", aiPick: true, img: "spice", daysIdle: 15, expiryDays: 5, weightKg: 0.1 },
+  { id: "p17", name: "Sambar Powder", category: "Spices & Masala", unit: "Packet", mrp: 72, stock: 40, status: "Healthy", img: "spice", weightKg: 0.1 },
+
+  { id: "p18", name: "Wheat Flour (Atta)", category: "Flour & Rava", unit: "Kg", mrp: 45, stock: 150, status: "Healthy", img: "flour", weightKg: 1 },
+  { id: "p19", name: "Rava (Sooji)", category: "Flour & Rava", unit: "Kg", mrp: 42, stock: 80, status: "Healthy", img: "flour", weightKg: 1 },
+  { id: "p20", name: "Maida", category: "Flour & Rava", unit: "Kg", mrp: 38, stock: 90, status: "Healthy", img: "flour", weightKg: 1 },
+  { id: "p21", name: "Besan", category: "Flour & Rava", unit: "Kg", mrp: 80, stock: 25, status: "Low Stock", img: "flour", weightKg: 1 },
+
+  { id: "p22", name: "Sugar", category: "Sugar & Salt", unit: "Kg", mrp: 44, stock: 200, status: "Healthy", img: "sugar", weightKg: 1 },
+  { id: "p23", name: "Salt (Iodised)", category: "Sugar & Salt", unit: "Kg", mrp: 22, stock: 300, status: "Healthy", img: "salt", weightKg: 1 },
+  { id: "p24", name: "Jaggery", category: "Sugar & Salt", unit: "Kg", mrp: 70, stock: 50, status: "Healthy", img: "jaggery", weightKg: 1 },
+
+  { id: "p25", name: "Parle-G Biscuit", category: "Biscuits & Snacks", unit: "Pcs", mrp: 10, stock: 300, status: "Healthy", img: "biscuit", weightKg: 0.08 },
+  { id: "p26", name: "Good Day Biscuit", category: "Biscuits & Snacks", unit: "Pcs", mrp: 30, stock: 180, status: "Healthy", img: "biscuit", weightKg: 0.08 },
+  { id: "p27", name: "Marie Gold", category: "Biscuits & Snacks", unit: "Pcs", mrp: 25, stock: 160, status: "Healthy", img: "biscuit", weightKg: 0.08 },
+  { id: "p28", name: "Lays Chips", category: "Biscuits & Snacks", unit: "Pcs", mrp: 20, stock: 250, status: "Healthy", img: "chips", weightKg: 0.05 },
+
+  { id: "p29", name: "Tata Tea Premium", category: "Beverages", unit: "Packet", mrp: 145, stock: 20, status: "Low Stock", img: "tea", weightKg: 0.25 },
+  { id: "p30", name: "Bru Coffee", category: "Beverages", unit: "Packet", mrp: 130, stock: 40, status: "Healthy", img: "coffee", weightKg: 0.2 },
+  { id: "p31", name: "Horlicks", category: "Beverages", unit: "Pcs", mrp: 210, stock: 50, status: "Healthy", img: "horlicks", weightKg: 0.5 },
+  { id: "p32", name: "Boost", category: "Beverages", unit: "Pcs", mrp: 195, stock: 45, status: "Healthy", img: "boost", weightKg: 0.5 },
+
+  { id: "p33", name: "Surf Excel", category: "Soaps & Detergents", unit: "Packet", mrp: 95, stock: 60, status: "Healthy", img: "detergent", weightKg: 0.5 },
+  { id: "p34", name: "Ariel", category: "Soaps & Detergents", unit: "Packet", mrp: 100, stock: 45, status: "Healthy", img: "detergent", weightKg: 0.5 },
+  { id: "p35", name: "Lifebuoy Soap", category: "Soaps & Detergents", unit: "Pcs", mrp: 38, stock: 120, status: "Healthy", img: "soap", weightKg: 0.1 },
+  { id: "p36", name: "Vim Bar", category: "Soaps & Detergents", unit: "Pcs", mrp: 25, stock: 140, status: "Healthy", img: "soap", weightKg: 0.1 },
+  { id: "p37", name: "Harpic", category: "Soaps & Detergents", unit: "Pcs", mrp: 110, stock: 30, status: "Healthy", img: "cleaner", weightKg: 0.5 },
+
+  { id: "p38", name: "Aavin Milk Packet", category: "Dairy & Eggs", unit: "Litre", mrp: 27, stock: 120, status: "Healthy", img: "milk", expiryDays: 2, weightKg: 1 },
+  { id: "p39", name: "Curd", category: "Dairy & Eggs", unit: "Pcs", mrp: 40, stock: 60, status: "Healthy", img: "curd", expiryDays: 5, weightKg: 0.5 },
+  { id: "p40", name: "Eggs (Tray)", category: "Dairy & Eggs", unit: "Pcs", mrp: 7, stock: 500, status: "Healthy", img: "eggs", expiryDays: 10, weightKg: 0.06 },
 ];
 
 export interface Customer {
@@ -59,16 +90,21 @@ export interface Customer {
 }
 
 export const customers: Customer[] = [
-  { id: "c1",  name: "Murugan S",      phone: "98765 43201", type: "Credit",  outstanding: 1200, lastPurchase: "2 days ago" },
-  { id: "c2",  name: "Lakshmi Devi",   phone: "98765 43202", type: "Frequent", outstanding: 0,    lastPurchase: "Today" },
-  { id: "c3",  name: "Rajan K",        phone: "98765 43203", type: "Credit",  outstanding: 3400, lastPurchase: "5 days ago" },
-  { id: "c4",  name: "Krishnamurthy",  phone: "98765 43205", type: "Business",outstanding: 6800, lastPurchase: "1 week ago" },
-  { id: "c5",  name: "Annamalai T",    phone: "98765 43206", type: "Regular", outstanding: 0,    lastPurchase: "Yesterday" },
-  { id: "c6",  name: "Valli Ammal",    phone: "98765 43207", type: "Frequent",outstanding: 0,    lastPurchase: "3 days ago" },
-  { id: "c7",  name: "Senthil Kumar",  phone: "98765 43208", type: "Business",outstanding: 2200, lastPurchase: "4 days ago" },
-  { id: "c8",  name: "Meenakshi P",    phone: "98765 43209", type: "Frequent", outstanding: 0,    lastPurchase: "Today" },
-  { id: "c9",  name: "Palani G",       phone: "98765 43210", type: "Credit",  outstanding: 4100, lastPurchase: "6 days ago" },
-  { id: "c10", name: "Sundaram B",     phone: "98765 43212", type: "Regular", outstanding: 0,    lastPurchase: "Yesterday" },
+  { id: "c1", name: "Murugan S", phone: "9876543201", type: "Credit", outstanding: 1200, lastPurchase: "2 days ago" },
+  { id: "c2", name: "Lakshmi Devi", phone: "9876543202", type: "Frequent", outstanding: 0, lastPurchase: "Today" },
+  { id: "c3", name: "Rajan K", phone: "9876543203", type: "Credit", outstanding: 2500, lastPurchase: "5 days ago" },
+  { id: "c4", name: "Selvi R", phone: "9876543204", type: "Regular", outstanding: 500, lastPurchase: "Yesterday" },
+  { id: "c5", name: "Krishnamurthy", phone: "9876543205", type: "Business", outstanding: 6800, lastPurchase: "1 week ago" },
+  { id: "c6", name: "Annamalai T", phone: "9876543206", type: "Regular", outstanding: 0, lastPurchase: "Today" },
+  { id: "c7", name: "Valli Ammal", phone: "9876543207", type: "Frequent", outstanding: 1800, lastPurchase: "3 days ago" },
+  { id: "c8", name: "Senthil Kumar", phone: "9876543208", type: "Business", outstanding: 2200, lastPurchase: "4 days ago" },
+  { id: "c9", name: "Meenakshi P", phone: "9876543209", type: "Frequent", outstanding: 0, lastPurchase: "Today" },
+  { id: "c10", name: "Palani G", phone: "9876543210", type: "Credit", outstanding: 4100, lastPurchase: "6 days ago" },
+  { id: "c11", name: "Kavitha M", phone: "9876543211", type: "Regular", outstanding: 900, lastPurchase: "2 days ago" },
+  { id: "c12", name: "Sundaram B", phone: "9876543212", type: "Regular", outstanding: 0, lastPurchase: "Yesterday" },
+  { id: "c13", name: "Revathi A", phone: "9876543213", type: "Regular", outstanding: 1500, lastPurchase: "3 days ago" },
+  { id: "c14", name: "Govindan R", phone: "9876543214", type: "Business", outstanding: 3800, lastPurchase: "5 days ago" },
+  { id: "c15", name: "Padmavathi S", phone: "9876543215", type: "Regular", outstanding: 0, lastPurchase: "Today" },
 ];
 
 export interface Offer {
