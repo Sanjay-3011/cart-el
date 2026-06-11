@@ -40,8 +40,8 @@ const slowMovers = [
 ];
 
 const promos = [
-  { offer: "Toor Dal 8% off", date: "20 May", items: 10, before: 22, after: 31, lift: 41 },
-  { offer: "Weekend Bundle", date: "15 May", items: 6, before: 15, after: 18, lift: 20 },
+  { offer: "Toor Dal 8% off", date: "11 June", items: 2, before: 0, after: 0, lift: 0 },
+  { offer: "Weekend Bundle", date: "10 June", items: 6, before: 0, after: 0, lift: 0 },
 ];
 
 function Analytics() {
@@ -55,55 +55,6 @@ function Analytics() {
         <h1 className="text-2xl font-bold text-foreground">Analytics</h1>
         <p className="text-sm text-muted-foreground mt-1">Your store's pulse, distilled.</p>
       </div>
-
-      {/* Merchant Level card */}
-      <div className="rounded-xl shadow-card overflow-hidden text-white relative"
-        style={{ background: "linear-gradient(135deg, #0D4F2E 0%, #1A7A45 100%)" }}>
-        <div className="absolute -top-12 -right-12 w-56 h-56 rounded-full" style={{ background: "rgba(246,201,14,0.12)" }} />
-        <div className="p-6 grid md:grid-cols-[1.2fr_1fr] gap-6 relative">
-          <div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center text-xl">👨‍💼</div>
-              <div>
-                <div className="text-lg font-bold">Aadhirai Mart</div>
-                <div className="text-sm flex items-center gap-2">
-                  <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: "#F6C90E", color: "#0D4F2E" }}>LEVEL 3</span>
-                  <span className="opacity-90">Growing Merchant 📈</span>
-                </div>
-              </div>
-            </div>
-            <div className="mt-4">
-              <div className="flex items-center justify-between text-xs mb-1.5 opacity-90">
-                <span>XP Progress</span>
-                <span className="font-semibold tabular-nums">1,240 / 2,000 XP</span>
-              </div>
-              <div className="h-3 bg-white/15 rounded-full overflow-hidden">
-                <div className="h-full transition-all" style={{ width: "62%", background: "linear-gradient(90deg, #F6C90E, #FCEA9C)" }} />
-              </div>
-              <div className="text-xs mt-3 opacity-90">
-                Next milestone: Send 3 offers this week → unlock <b>"Consistent Merchant"</b> + Level 4
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="text-xs uppercase tracking-wide opacity-80 font-semibold mb-2">🏅 Badges Earned</div>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { e: "🎯", n: "First Broadcast", unlocked: true },
-                { e: "🔥", n: "7-Day Streak", unlocked: true },
-                { e: "💰", n: "Deal Maker", unlocked: true },
-                { e: "🏆", n: "Weekend Champion", unlocked: false },
-              ].map((b) => (
-                <div key={b.n} className={`rounded-lg px-3 py-2 flex items-center gap-2 text-xs ${b.unlocked ? "bg-white/15" : "bg-black/20 opacity-60"}`}>
-                  <span className="text-base">{b.unlocked ? b.e : "🔒"}</span>
-                  <span className={b.unlocked ? "font-medium" : "italic"}>{b.n}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* AI Morning Digest */}
       <div className="rounded-xl shadow-card p-5 flex gap-4" style={{ background: "linear-gradient(135deg, oklch(0.95 0.04 150), oklch(0.92 0.05 150))" }}>
         <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center shrink-0">
