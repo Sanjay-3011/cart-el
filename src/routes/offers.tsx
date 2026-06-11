@@ -199,7 +199,6 @@ function OfferBuilder() {
             <textarea readOnly value={lang === "en" ? captionEn : captionTa}
               className="w-full h-28 text-sm border border-border rounded-lg p-3 bg-background resize-none" />
           </div>
-          </div>
         </div>
 
         {/* RIGHT — Poster Variants */}
@@ -406,16 +405,6 @@ function PosterRenderer({
 function ResponsiveScaler({ children, width, height }: { children: React.ReactNode, width: number, height: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.4);
-
-  // We use ResizeObserver to update scale based on container width.
-  // A simpler way is an empty dependency effect since we just observe.
-  import("react").then(({ useEffect }) => {
-    // Dynamic import to avoid missing top-level import in case it's not imported.
-    // However, useEffect is already imported at the top (from "react"), but just to be safe we can use standard import if we want,
-    // wait, we can just use React.useEffect, but React might not be in scope. 
-    // It's safer to just import useEffect at the top of the file. Let me check if useEffect is imported.
-    // It is imported as `import { useMemo, useRef, useState } from "react";` - wait, useEffect is not imported!
-  });
 
   return (
     <div ref={containerRef} className="w-full relative rounded-xl overflow-hidden bg-muted flex items-center justify-center" style={{ aspectRatio: `${width}/${height}` }}>
