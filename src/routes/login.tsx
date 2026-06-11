@@ -15,7 +15,6 @@ function LoginPage() {
   const [success, setSuccess] = useState("");
 
   useEffect(() => {
-    // Check if a merchant account is already registered
     const registeredUser = localStorage.getItem("merchant_username");
     if (!registeredUser) {
       setMode("signup");
@@ -36,14 +35,21 @@ function LoginPage() {
       localStorage.setItem("merchant_password", password);
       setSuccess("Account secured! Please log in with your new credentials.");
       setMode("login");
-      setPassword(""); // Clear password for login
+      setPassword("");
     } else {
       const storedUser = localStorage.getItem("merchant_username");
       const storedPass = localStorage.getItem("merchant_password");
-      
+
       if (username === storedUser && password === storedPass) {
         localStorage.setItem("merchant_auth", "true");
-        navigate({ to: "/" });
+
+        // If onboarding already done, go to index. Else start onboarding.
+        const onboardingDone = localStorage.getItem("onboarding_complete");
+        if (onboardingDone === "true") {
+          navigate({ to: "/" });
+        } else {
+          navigate({ to: "/merchant" });
+        }
       } else {
         setError("Invalid username or password.");
       }
@@ -52,7 +58,6 @@ function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background text-foreground p-4 relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-success/20 blur-[120px] pointer-events-none" />
 
@@ -72,8 +77,8 @@ function LoginPage() {
             <label className="text-sm font-semibold ml-1">Username</label>
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
@@ -91,8 +96,8 @@ function LoginPage() {
               ) : (
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               )}
-              <input 
-                type="password" 
+              <input
+                type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
@@ -107,18 +112,18 @@ function LoginPage() {
               {error}
             </div>
           )}
-
           {success && (
             <div className="text-sm text-success font-medium bg-success/10 px-3 py-2 rounded-lg text-center animate-in">
               {success}
             </div>
           )}
 
-          <button 
+          <button
             type="submit"
             className="w-full bg-primary text-primary-foreground font-semibold py-3.5 rounded-xl shadow-[0_8px_20px_rgba(22,163,74,0.25)] hover:shadow-[0_12px_25px_rgba(22,163,74,0.35)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group mt-2"
           >
-            {mode === "signup" ? "Create Account" : "Access Dashboard"} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            {mode === "signup" ? "Create Account" : "Let's Get Started"}{" "}
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </form>
 
