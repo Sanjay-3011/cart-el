@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { products, type Status } from "@/data/mock";
-import { AlertTriangle, Skull, TrendingDown, Package, Bot, Check, X, Flame, Award, Clock, Heart, Zap, ChevronRight, Leaf, ShoppingCart } from "lucide-react";
+import { AlertTriangle, Skull, TrendingDown, TrendingUp, Package, Bot, Check, X, Flame, Award, Clock, Heart, Zap, ChevronRight, Leaf, ShoppingCart } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: StockDashboard,
