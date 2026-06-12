@@ -74,7 +74,7 @@ function OfferBuilder() {
   const buildCaptionEn = () => {
     if (selectedProducts.length === 0) return "Select a product to generate caption.";
     const lines = selectedProducts
-      .map((p) => `• ${p.name} – Was ₹${p.mrp}, Now ₹${calcNew(p.mrp)} (Save ₹${savePer(p.mrp)})`)
+      .map((p, i) => `${i + 1}. ${p.name} – Was ₹${p.mrp}, Now ₹${calcNew(p.mrp)} (Save ₹${savePer(p.mrp)})`)
       .join("\n");
     return `🛒 Weekend Special at Aadhirai Mart!\n\n${lines}\n\nOffer valid ${validFromLabel} – ${validToLabel} only 🔥\n📞 Call: 98765 43200`;
   };
