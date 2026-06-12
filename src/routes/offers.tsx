@@ -31,11 +31,11 @@ function OfferBuilder() {
   const [cat,           setCat]           = useState<string>("All");
   const [discountType,  setDiscountType]  = useState<"percent" | "flat">("percent");
   const [discountValue, setDiscountValue] = useState<number>(10);
-  const [validFrom,     setValidFrom]     = useState("2026-05-26");
-  const [validTo,       setValidTo]       = useState("2026-06-01");
+  const [validFrom,     setValidFrom]     = useState("2026-06-12");
+  const [validTo,       setValidTo]       = useState("2026-06-19");
   const [lang,          setLang]          = useState<"en" | "ta">("en");
   const [activeVariant, setActiveVariant] = useState<PosterVariant>("premium");
-  const [aiPrompt,      setAiPrompt]      = useState("Generate a cool cyberpunk themed poster");
+  const [aiPrompt,      setAiPrompt]      = useState("Enter the poster title here");
   const [customColor,   setCustomColor]   = useState("#8b5cf6");
 
   // Editable captions
