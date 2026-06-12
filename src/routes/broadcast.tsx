@@ -234,7 +234,7 @@ function Broadcast() {
                     <div className={`text-xs font-medium ${
                       st === "Delivered" ? "text-success" : st === "Failed" ? "text-alert" : "text-warning"
                     }`}>
-                      {st === "Delivered" ? `Delivered ${i + 1} min ago` : st === "Failed" ? "Failed (invalid number)" : "Pending"}
+                      {st === "Delivered" ? `Delivered` : st === "Failed" ? "Failed (invalid number)" : "Pending"}
                     </div>
                   </div>
                 );
